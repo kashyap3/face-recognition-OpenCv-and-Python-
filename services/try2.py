@@ -6,7 +6,7 @@ from datetime import datetime
 import time
 # from PIL import ImageGrab
 img_counter = 0
-path = 'ImagesRecord'
+path = 'E:/projects/face-recognition/ImagesRecord'
 images = []
 classNames = []
 myList = os.listdir(path)
@@ -37,7 +37,7 @@ def markRecord(name):
 
         if name not in nameList:
             now = datetime.now()
-            dtString = now.strftime('%H:%M:%S')
+            dtString = now.strftime("%m/%d/%Y, %H:%M:%S")
             f.writelines(f'\n{name},{dtString}')
         #else:
          #   now = datetime.now()
@@ -93,11 +93,11 @@ while True:
                 img_name = "OPENCV_FRAME_{}.jpg".format(img_counter)
                 markRecord(img_name)
 
-                hello = 'E:/face recognization/ImagesRecord/' + img_name
+                hello = 'E:/projects/face-recognition/ImagesRecord/' + img_name
                 cv2.imwrite(hello, frame)
                 print("{} written!".format(img_name))
-                hello = cv2.cvtColor(hello, cv2.COLOR_BGR2RGB)
-                encodeListKnown.append(findEncodings(hello))
+                #hello = cv2.cvtColor(hello, cv2.COLOR_BGR2RGB)
+                #encodeListKnown.append(findEncodings(hello))
                 img_counter += 1
                 time.sleep(5)
                 break

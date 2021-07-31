@@ -4,8 +4,7 @@ import face_recognition
 import os
 from datetime import datetime
 
-# from PIL import ImageGrab
-
+#hello
 path = 'ImagesAttendance'
 images = []
 classNames = []
